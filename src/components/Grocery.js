@@ -4,7 +4,7 @@ const Grocery = (props) => {
   return (
     <li>
       {props.name}
-      <button type="button" onClick={props.DeleteGrocery}>Delete</button>
+      <button type="button" onClick={props.handleButtonClick}>Delete</button>
     </li>
   )
 }
