@@ -6,11 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      groceries: [
-        { id: 1, name: "Oranges" },
-        { id: 2, name: "Bananas" },
-        { id: 3, name: "Bread" }
-      ],
+      groceries: [],
       name: ''
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -25,19 +21,15 @@ class App extends Component {
       id: newId,
       name: this.state.name
     }
+
     let newGroceries = this.state.groceries.concat(newGrocery)
+
     this.setState({
       groceries: newGroceries,
       name: ''
-      })
-
-    alert('Form was submitted')
+    })
   }
 
-
-  // handleButtonClick(event) {
-  //   alert('Button was clicked')
-  // }
   handleButtonClick(id) {
     let newGroceries = this.state.groceries.filter(grocery => {
       return grocery.id !== id
@@ -50,19 +42,15 @@ class App extends Component {
     this.setState({ name: newName })
   }
 
-
-
   render() {
-    console.log("App's state name value: ", this.state.name)
     return(
       <div>
         <h1>Grocery List React</h1>
         <GroceryForm
-        handleFormSubmit={this.handleFormSubmit}
-        handleChange={this.handleChange}
-        name={this.state.name}
-         />
-
+          handleFormSubmit={this.handleFormSubmit}
+          handleChange={this.handleChange}
+          name={this.state.name}
+        />
         <GroceryList
           groceries={this.state.groceries}
           handleButtonClick={this.handleButtonClick}

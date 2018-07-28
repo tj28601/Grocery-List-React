@@ -6,13 +6,13 @@ const GroceryList = (props) => {
     let id = grocery.id
     let name = grocery.name
 
-    let GroceryhandleButtonClick = () => props.handleButtonClick(id)
+    let handleButtonClick = () => props.handleButtonClick(id)
 
     return (
       <Grocery
         key={id}
         name={name}
-        DeleteGrocery={GroceryhandleButtonClick}
+        handleButtonClick={handleButtonClick}
       />
     )
   })
